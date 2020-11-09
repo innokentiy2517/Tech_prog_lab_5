@@ -1,30 +1,28 @@
 package Task;
 
+import Input.Input;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Vector {
 
-    public Vector (){
-        getInput();
-    }
-
     private int n, T;
     private int[] vectorC;
     private int[] vectorB;
 
+    public Vector (){
+        getInput();
+    }
+
     private void getInput () {
-        Scanner scan = new Scanner(System.in);
         boolean check_n = false;
         while (!check_n) {
-            System.out.println("Input n:");
-            this.n = scan.nextInt();
+            this.n = Input.inputInteger("Input n:");
             if (n <= 12) {check_n = true;}
             else {System.out.println("Incorrect input. Try again");}
         }
-        System.out.println("Input T:");
-        this.T = scan.nextInt();
-        scan.close();
+        this.T = Input.inputInteger("Input T:");
     }
 
     public void initAndChangeVector (){
